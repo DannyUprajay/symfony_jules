@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CategoryController!{% endblock %}
+
+{% block body %}
+    <h1>{{ publication.title }}</h1>
+
+    <p> Le nombre de commentaires : {{ publication.comments | length }} </p>
+    <p> {{ publication.content }} </p>
+    <p> Créer le {{ publication.createdAt|date('y-m-d H:i')}}</p>
+
+    <h2>Ajouter un commentaire :</h2>
+    {{ form_start(form) }}
+    {{ form_row(form.content) }}
+    <button type="submit">Ajouter le commentaire</button>
+    {{ form_end(form) }}
+
+    <ul>
+        <h2>Commentaire :</h2>
+        {%  for comment in publication.comments %}
+            <li>  {{ comment.content }}</li>
+        {% endfor %}
+    </ul>
+
+
+
+{% endblock %}

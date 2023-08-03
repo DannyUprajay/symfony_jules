@@ -1,0 +1,6 @@
+App\Entity\Publication:
+  publication{0..20}:
+    title: "<word()>"
+    content: "<word()>"
+    createdAt: '<dateTimeBetween("-2 years", "now")>'
+
